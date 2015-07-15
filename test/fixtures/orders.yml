@@ -1,0 +1,11 @@
+one:
+  name: Eugeny Naumov
+  address: MyText
+  email: eugeny@naumov.org
+  pay_type: Check
+
+two:
+  name: MyString
+  address: MyText
+  email: MyString
+  pay_type: MyString
