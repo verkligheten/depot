@@ -29,9 +29,9 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
     assert_template "new"
     
     post_via_redirect "/orders",
-                      order: { name:     "Dave Thomas",
+                      order: { name:     "Eugeny Naumov",
                                address:  "123 The Street",
-                               email:    "dave@example.com",
+                               email:    "eugeny@naumov.com",
                                pay_type: "Check" }
     assert_response :success
     assert_template "index"
@@ -42,9 +42,9 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
     assert_equal 1, orders.size
     order = orders[0]
     
-    assert_equal "Dave Thomas",      order.name
+    assert_equal "Eugeny Naumov",      order.name
     assert_equal "123 The Street",   order.address
-    assert_equal "dave@example.com", order.email
+    assert_equal "eugeny@naumov.com", order.email
     assert_equal "Check",            order.pay_type
     
     assert_equal 1, order.line_items.size
@@ -52,7 +52,7 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
     assert_equal ruby_book, line_item.product
 
     mail = ActionMailer::Base.deliveries.last
-    assert_equal ["dave@example.com"], mail.to
+    assert_equal ["eugeny@naumov.com"], mail.to
     assert_equal 'Sam Ruby <depot@example.com>', mail[:from].value
     assert_equal "Pragmatic Store Order Confirmation", mail.subject
   end
