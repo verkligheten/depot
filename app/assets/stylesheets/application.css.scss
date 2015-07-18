@@ -15,11 +15,11 @@
  */
 
 #banner {
-  background: #9c9;
+  background: #606060;
   padding: 10px;
   border-bottom: 2px solid;
   font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
+  color: #FEFEFE;
   text-align: center;
 
   img {
@@ -37,19 +37,19 @@
 }
 
 #columns {
-  background: #141;
+  background: #F2F2F2;
 
   #main {
     margin-left: 17em;
     padding: 1em;
-    background: white;
+    background: #F7F7F7;
   }
 
   #side {
     float: left;
     padding: 1em 2em;
     width: 13em;
-    background: #141;
+    background: #F2F2F2;
 
     form, div {
       display: inline;
@@ -61,7 +61,7 @@
 
     #cart {
       font-size: smaller;
-      color:     white;
+      color:     #666;
 
       table {
         border-top:    1px dotted #595;
@@ -77,7 +77,7 @@
         list-style: none;
 
         a {
-          color: #bfb;
+          color: #666;
           font-size: small;
         }
       }
@@ -87,11 +87,11 @@
 
 .depot_form {
   fieldset {
-    background: #efe;
+    background: #f6f6f6;
 
     legend {
       color: #dfd;
-      background: #141;
+      background: #666;
       font-family: sans-serif;
       padding: 0.2em 1em;
     }
