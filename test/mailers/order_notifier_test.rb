@@ -10,6 +10,10 @@ class OrderNotifierTest < ActionMailer::TestCase
   end
 
   test "shipped" do
+    order = Order.new(email: "eugeny@naumov.org")
+    product = Product.new(title: "Programming Ruby 1.9")
+    line_item = LineItem.new(product: product, order: order)
+
     mail = OrderNotifier.shipped(orders(:one))
     assert_equal "Pragmatic Store Order Shipped", mail.subject
     assert_equal ["eugeny@naumov.org"], mail.to
