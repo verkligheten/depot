@@ -29,4 +29,11 @@ class CartTest < ActiveSupport::TestCase
     assert_equal 1, Cart.count, "unable to create cart"
     assert_equal 1, Cart.destroy_all.count, "unable to destroy cart"
   end
+
+  test "cart should count total price of products in it" do
+    cart = Cart.create
+    line_item = LineItem.create(product_id: products(:ruby).id, cart_id: cart.id)
+    line_item = LineItem.create(product_id: products(:one).id, cart_id: cart.id)
+    assert_equal 59.49, cart.total_price
+  end
 end
