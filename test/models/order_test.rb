@@ -15,12 +15,12 @@ class OrderTest < ActiveSupport::TestCase
   end
 
   test "order should be valid" do
-    order = Order.new
+    order = Order.create
     refute order.valid?
     refute order.persisted?
   end
 
-  test "dfghjkl" do
+  test "order shuld have line items from cart" do
     cart = Cart.create
     cart.add_product(products(:ruby).id)
     cart.save!
