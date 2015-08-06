@@ -4,11 +4,12 @@ class CartTest < ActiveSupport::TestCase
   fixtures :products
 
   test "cart depend destroy" do
-    cart = Cart.create.add_product(products(:ruby).id)
+    cart = Cart.create
+    cart.add_product(products(:ruby).id)
     cart.save!
     assert cart.persisted?
     cart.destroy
-    assert_nil LineItem.find_by(cart_id: cart.cart_id)
+    assert_nil LineItem.find_by(cart_id: cart.id)
   end
 
   test "quantity is increment when select product twice" do
