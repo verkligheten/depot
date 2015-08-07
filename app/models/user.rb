@@ -9,5 +9,5 @@ class User < ActiveRecord::Base
       if User.count.zero?
         raise "Can't delete last user"
       end
-    end     
+    end
 end
