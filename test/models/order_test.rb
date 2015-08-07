@@ -29,4 +29,11 @@ class OrderTest < ActiveSupport::TestCase
     assert_not_nil order.line_items
     assert_nil order.line_items.each{|i| return i.cart_id}
     end
+
+
+  test "order email should be valid" do
+    order = Order.create(name: "test_name", address: "test_address",email: ".........", pay_type: "Check")
+    refute order.valid?
+    refute order.persisted?
+  end
 end
